@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+html,
+body {
+  min-width: 500px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navBar{
+  height: 10vh;
+  background-color: #20303F;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navBar-logo
+{
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: -10%;
+}
+.DataBox{
+  display: inline-block;
+  background-color: #f0f0f0;
+  width: 80%;
+  border: 1px solid #D0D0D0;
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 60px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.DataTitle {
+  font-size: 25px;
+  display: inline;
+  font-weight: bold;
+}
+.DataVersion {
+  margin-right: 20px;
+  font-size: 15px;
+font-style: italic;
+  float: right;
+}
+
+.DataWeb {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.Pagination-block{
+  padding-top: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.Page-box {
+
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
