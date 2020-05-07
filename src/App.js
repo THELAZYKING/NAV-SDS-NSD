@@ -41,6 +41,25 @@ class App extends React.Component {
   {
     this.GetData();
   }
+
+  handleShift(data) {
+    if (data === "inc") {
+        this.setState(prevState => {
+            return { currentPage: prevState.currentPage + 1 }
+        });
+    }
+    else {
+        this.setState(prevState => {
+            return { currentPage: prevState.currentPage - 1 }
+        });
+        
+    }
+}
+
+  Paginating(number)
+      {
+        this.setState({currentPage: number});
+      }
   
   render(){
 
@@ -61,7 +80,7 @@ class App extends React.Component {
 
       let Pagination = Pages.map( number => (
         <div className="Page-box" key={number}>
-          <div><i className ={this.state.currentPage === number ?"circle icon" :"circle outline icon"}></i></div>
+          <div  onClick = {() => this.Paginating(number)} ><i className ={this.state.currentPage === number ?"circle icon" :"circle outline icon"}></i></div>
         </div>
     ))
 
@@ -75,11 +94,16 @@ class App extends React.Component {
         );
           });
 
-    var RightArrow;
-    var LeftArrow;    
+          const RightArrow = this.state.currentPage < end ? < div className="RightArrow" style={this.state.display === "Enlarged" ? { display: "none" } : {}} onClick={() => this.handleShift("inc")}><i class="angle large right icon"></i></div > : < div className="RightArrow" style={this.state.display === "Enlarged" ? { display: "none" } : {}} >
+          <i class="angle large right icon"></i></div >
+
+  const LeftArrow = this.state.currentPage > 1 ? < div className="LeftArrow" style={this.state.display === "Enlarged" ? { display: "none" } : {}} onClick={() => this.handleShift("dec")}>
+      <i class="angle large left icon"></i></div > : < div className="LeftArrow" style={this.state.display === "Enlarged" ? { display: "none" } : {}} >
+          <i class="angle large left icon"></i></div >
+
 
  return (
-    <div>
+    <div className="page">
       <div className="navBar">
         </div>
         <img src="https://github.com/THELAZYKING/SoftwareDownloadSystem/blob/master/NAV.png?raw=true" alt="logo" className="navBar-logo"></img>
@@ -93,7 +117,7 @@ class App extends React.Component {
 
   <div>
   <a href="https://localhost:3000/nsdHome">
-                      <button className="ui fluid button" style={{ backgroundColor: "#212121", color: "white", marginTop: "40px", width: "90%", marginLeft: "5%" }} >Show All Requestk</button>
+                      <button className="ui fluid button" style={{ backgroundColor: "#212121", color: "white", marginTop: "40px", width: "90%", marginLeft: "5%" }} >Show All Requests</button>
                   </a>
                   </div>
     </div>
